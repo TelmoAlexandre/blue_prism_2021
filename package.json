@@ -1,0 +1,66 @@
+{
+  "name": "blue-prism-exercise",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.13.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^12.20.15",
+    "@types/react": "^17.0.10",
+    "@types/react-dom": "^17.0.7",
+    "antd": "^4.16.2",
+    "node-sass": "^6.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.0",
+    "typescript": "^4.3.2",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "prettier": {
+    "printWidth": 100,
+    "arrowParens": "avoid",
+    "bracketSpacing": true,
+    "embeddedLanguageFormatting": "auto",
+    "htmlWhitespaceSensitivity": "css",
+    "insertPragma": false,
+    "jsxBracketSameLine": false,
+    "jsxSingleQuote": false,
+    "proseWrap": "preserve",
+    "quoteProps": "as-needed",
+    "requirePragma": false,
+    "semi": true,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
+  }
+}
