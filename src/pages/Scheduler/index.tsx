@@ -16,10 +16,10 @@ export default function SchedulerPage({}: IProps) {
       </Header>
       <Content>
         <Layout>
-          <Sider>
+          <Sider className={styles.sider}>
             <ScheduleCardsSider />
           </Sider>
-          <Content>
+          <Content className={styles.content}>
             <ScheduleLogsContent />
           </Content>
         </Layout>

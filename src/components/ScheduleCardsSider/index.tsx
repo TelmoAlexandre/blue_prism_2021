@@ -1,15 +1,15 @@
 import React from "react";
-import ScheduleCard from "./ScheduleCard";
+import ScheduleCardsList from "./ScheduleCardsList";
+import ScheduleSearch from "./ScheduleSearch";
+import styles from "./styles.module.scss";
+
 interface IProps {}
 
 export default function ScheduleCardsSider({}: IProps) {
-  const test = [0, 0, 0, 0, 0];
-
   return (
-    <>
-      {test.map(i => (
-        <ScheduleCard />
-      ))}
-    </>
+    <div className={styles.container}>
+      <ScheduleSearch />
+      <ScheduleCardsList />
+    </div>
   );
 }

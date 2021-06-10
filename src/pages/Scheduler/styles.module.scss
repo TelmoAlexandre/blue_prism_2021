@@ -1,4 +1,20 @@
 .header {
+  height: 10vh;
   background: none;
-  height: auto;
+}
+
+.sider {
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: none;
+  width: auto !important;
+  max-width: none !important;
+  flex: none !important;
+}
+
+.content {
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }

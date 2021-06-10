@@ -1,9 +1,13 @@
+$transitionLength: 0.5s;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Arial", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  transition: $transitionLength;
 }
 
 code {

@@ -1,7 +1,5 @@
-$transitionLength: 0.3s;
-
 .container {
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   display: flex;
   justify-content: space-between;
 
@@ -9,7 +7,6 @@ $transitionLength: 0.3s;
     .title {
       font-size: 3rem;
       font-weight: 700;
-      transition: $transitionLength;
       margin: 0;
     }
   }
@@ -22,12 +19,11 @@ $transitionLength: 0.3s;
     .barsIcon {
       font-size: 2.5rem;
       cursor: pointer;
-      transition: $transitionLength;
     }
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 400px) {
   .container {
     .left {
       .title {
