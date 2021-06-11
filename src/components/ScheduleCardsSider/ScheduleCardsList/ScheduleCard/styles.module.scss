@@ -1,0 +1,23 @@
+.card {
+  z-index: 0;
+  .meta {
+    margin-bottom: 0.5rem;
+
+    :global {
+      .ant-card-meta-avatar {
+        padding-top: 0.05rem;
+        padding-right: 0.5rem;
+      }
+      .ant-card-meta-title {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .footer {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1000;
+  }
+}

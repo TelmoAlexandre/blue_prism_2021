@@ -35,9 +35,12 @@ body {
 
 // Custom style and colors for ant components
 
-.ant-divider,
-.ant-input,
-path {
+.ant-divider {
   color: white !important;
   border-top-color: white !important;
+}
+
+.ant-input,
+.ant-input-suffix path {
+  color: white;
 }

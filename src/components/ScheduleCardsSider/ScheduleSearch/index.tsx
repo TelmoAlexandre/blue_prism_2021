@@ -1,4 +1,4 @@
-import { Input } from "antd";
+import { Button, Input } from "antd";
 import Search from "antd/lib/input/Search";
 import React, { ChangeEvent, ChangeEventHandler } from "react";
 import styles from "./styles.module.scss";
@@ -16,7 +16,7 @@ export default function ScheduleSearch({}: IProps) {
     <div className={styles.container}>
       <Input
         className={styles.input}
-        placeholder="Search Schedule"
+        placeholder="Search by Title"
         prefix={<SearchOutlined style={{ color: "white" }} />}
         size="large"
         onChange={onSearch}
