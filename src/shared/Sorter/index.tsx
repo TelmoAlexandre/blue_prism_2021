@@ -3,7 +3,9 @@ import { Dropdown, Menu } from "antd";
 import React, { useState } from "react";
 import styles from "./styles.module.scss";
 
-interface IProps {}
+interface IProps {
+  handleSort(type: SortType): void;
+}
 
 export enum SortType {
   DateDescending = 0,
@@ -12,12 +14,8 @@ export enum SortType {
   TitleAscending = 3,
 }
 
-export default function ScheduleSorter({}: IProps) {
+export default function Sorter({ handleSort }: IProps) {
   const [visible, setVisible] = useState(false);
-
-  const handleSort = (type: SortType) => {
-    alert("TODO");
-  };
 
   const handleVisibleChange = (flag: boolean) => {
     setVisible(flag);

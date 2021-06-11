@@ -1,0 +1,10 @@
+.container {
+  padding: 0 2rem 2rem;
+
+  .search {
+    :global(.ant-input-affix-wrapper) {
+      width: 25rem;
+      min-width: 10rem;
+    }
+  }
+}
