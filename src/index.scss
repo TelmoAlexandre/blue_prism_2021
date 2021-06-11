@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
   transition: $transitionLength;
-  background: linear-gradient(to bottom right, #002f4b, #dc4225);
+  background: linear-gradient(to bottom right, #002f4b, #d3705d);
   background-size: 400% 400%;
   animation: gradient 30s ease infinite;
   opacity: 0.6;
@@ -31,4 +31,13 @@ body {
   100% {
     background-position: 0% 50%;
   }
+}
+
+// Custom style and colors for ant components
+
+.ant-divider,
+.ant-input,
+path {
+  color: white !important;
+  border-top-color: white !important;
 }

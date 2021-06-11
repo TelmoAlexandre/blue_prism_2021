@@ -2,6 +2,7 @@ import { Input } from "antd";
 import Search from "antd/lib/input/Search";
 import React, { ChangeEvent, ChangeEventHandler } from "react";
 import styles from "./styles.module.scss";
+import { SearchOutlined } from "@ant-design/icons";
 
 interface IProps {}
 
@@ -14,9 +15,10 @@ export default function ScheduleSearch({}: IProps) {
   return (
     <div className={styles.container}>
       <Input
-        size="large"
         className={styles.input}
         placeholder="Search Schedule"
+        prefix={<SearchOutlined style={{ color: "white" }} />}
+        size="large"
         onChange={onSearch}
         bordered={false}
         allowClear
