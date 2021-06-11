@@ -3,6 +3,7 @@ import Search from "antd/lib/input/Search";
 import React, { ChangeEvent, ChangeEventHandler } from "react";
 import styles from "./styles.module.scss";
 import { SearchOutlined } from "@ant-design/icons";
+import ScheduleSorter from "./ScheduleSorter";
 
 interface IProps {}
 
@@ -23,6 +24,9 @@ export default function ScheduleSearch({}: IProps) {
         bordered={false}
         allowClear
       />
+      <div className={styles.sorter}>
+        <ScheduleSorter />
+      </div>
     </div>
   );
 }

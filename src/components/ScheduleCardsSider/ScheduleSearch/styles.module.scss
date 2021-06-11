@@ -1,14 +1,16 @@
 .container {
+  display: flex;
+  justify-content: space-between;
+
   .input {
-    width: 80%;
+    width: 100%;
     border-bottom: 1px solid white;
     padding: 0;
     color: white;
   }
-}
 
-@media (max-width: 1600px) {
-  .input {
-    width: 100% !important;
+  .sorter {
+    display: flex;
+    margin-left: 1rem;
   }
 }
