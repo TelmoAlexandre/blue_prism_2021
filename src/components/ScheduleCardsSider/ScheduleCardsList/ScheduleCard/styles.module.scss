@@ -1,5 +1,8 @@
 .card {
-  z-index: 0;
+  :global(.ant-card-body) {
+    padding: 1.2rem !important;
+  }
+
   .meta {
     margin-bottom: 0.5rem;
 
@@ -15,9 +18,8 @@
   }
 
   .footer {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     display: flex;
     justify-content: flex-end;
-    z-index: 1000;
   }
 }
