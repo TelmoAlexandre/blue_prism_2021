@@ -14,6 +14,7 @@ export default function ScheduleSearch({}: IProps) {
   return (
     <div className={styles.container}>
       <Input
+        size="large"
         className={styles.input}
         placeholder="Search Schedule"
         onChange={onSearch}

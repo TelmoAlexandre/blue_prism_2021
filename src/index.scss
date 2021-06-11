@@ -2,14 +2,33 @@ $transitionLength: 0.5s;
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Arial", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
   transition: $transitionLength;
+  background: linear-gradient(to bottom right, #002f4b, #dc4225);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+  opacity: 0.6;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+.text-light {
+  color: #f8f9fa;
+}
+
+.ant-layout {
+  background: none;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
