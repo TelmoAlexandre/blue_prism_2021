@@ -1,16 +1,25 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { ISchedule } from "../../types/ISchedule";
 
-interface IScheduleState {}
+interface IScheduleState {
+  schedules: ISchedule[] | undefined;
+}
 
-const initialState: IScheduleState = {};
+const initialState: IScheduleState = {
+  schedules: undefined,
+};
 
 const scheduleStore = createSlice({
   name: "scheduleStore",
   initialState,
-  reducers: {},
+  reducers: {
+    updateSchedules(state, { payload }: PayloadAction<ISchedule[] | undefined>) {
+      state.schedules = payload;
+    },
+  },
 });
 
-export const {} = scheduleStore.actions;
+export const { updateSchedules } = scheduleStore.actions;
 
 export const scheduleStoreReducers = {
   scheduleStore: scheduleStore.reducer,
