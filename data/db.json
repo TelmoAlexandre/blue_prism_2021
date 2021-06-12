@@ -1,0 +1,49 @@
+{
+  "schedules": [
+    {
+      "id": 1,
+      "title": "Lorem ipsum dolor sit amet",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "id": 2,
+      "title": "Neque sodales ut etiam",
+      "description": "Volutpat blandit aliquam etiam erat velit scelerisque in."
+    },
+    {
+      "id": 3,
+      "title": "Hendrerit dolor magna",
+      "description": "Diam phasellus vestibulum lorem sed risus ultricies. Aliquet bibendum enim facilisis gravida neque."
+    },
+    {
+      "id": 4,
+      "title": "Viverra suspendisse potenti",
+      "description": "Convallis a cras semper auctor neque vitae. Eleifend quam adipiscing vitae proin."
+    },
+    {
+      "id": 5,
+      "title": "Nec sagittis aliquam",
+      "description": "Adipiscing tristique risus nec feugiat in. Adipiscing bibendum est ultricies integer quis."
+    },
+    {
+      "id": 6,
+      "title": "Aliquam sem fringilla",
+      "description": "Morbi quis commodo odio aenean sed adipiscing diam donec adipiscing."
+    },
+    {
+      "id": 7,
+      "title": "Lorem mollis aliquam",
+      "description": "Sed id semper risus in. Cursus turpis massa tincidunt dui ut ornare."
+    },
+    {
+      "id": 8,
+      "title": "Augue lacus viverra vitae",
+      "description": "Placerat in egestas erat imperdiet sed euismod."
+    },
+    {
+      "id": 9,
+      "title": "Ligula ullamcorper malesuada",
+      "description": "Amet purus gravida quis blandit turpis cursus in."
+    }
+  ]
+}
