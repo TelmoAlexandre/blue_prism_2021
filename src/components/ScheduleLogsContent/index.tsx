@@ -19,7 +19,9 @@ export default function ScheduleLogsContent({}: IProps) {
   return (
     <div className={styles.container}>
       <Divider orientation="left">Logs</Divider>
-      <Search className={styles.search} onSearch={onSearch} handleSort={handleSort} />
+      <div className={styles.topBar}>
+        <Search className={styles.search} onSearch={onSearch} handleSort={handleSort} />
+      </div>
       <LogsList />
     </div>
   );
