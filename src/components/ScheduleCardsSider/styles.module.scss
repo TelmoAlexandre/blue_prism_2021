@@ -3,13 +3,21 @@
   flex-direction: column;
   justify-content: space-around;
   padding: 0 1rem;
-  width: 20vw;
-  min-width: 20rem;
+  max-width: 24rem;
+  min-width: 24rem;
 
   > div {
     margin-bottom: 1rem;
   }
   p {
     margin: 0;
+  }
+}
+
+@media (max-width: 850px) {
+  .container {
+    max-width: none;
+    min-width: none;
+    width: 100%;
   }
 }

@@ -15,14 +15,14 @@ export default function SchedulerPage({}: IProps) {
         <CustomHeader />
       </Header>
       <Content>
-        <Layout>
-          <Sider className={styles.sider}>
+        <div className={styles.content}>
+          <div className={styles.schedules}>
             <ScheduleCardsSider />
-          </Sider>
-          <Content className={styles.content}>
+          </div>
+          <div className={styles.logs}>
             <ScheduleLogsContent />
-          </Content>
-        </Layout>
+          </div>
+        </div>
       </Content>
     </Layout>
   );

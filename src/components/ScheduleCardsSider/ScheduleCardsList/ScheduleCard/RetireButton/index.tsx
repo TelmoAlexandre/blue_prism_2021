@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 
 interface IProps {
+  retired: boolean | undefined;
   handleRetire(event: React.MouseEvent<HTMLElement, MouseEvent> | undefined): void;
 }
 
@@ -23,7 +24,7 @@ export default function RetireButton({ handleRetire }: IProps) {
         okText="Yes"
         cancelText="No"
       >
-        <Button type="default" size="small" onClick={handleRetire}>
+        <Button type="default" size="middle" onClick={handleRetire}>
           Retire
         </Button>
       </Popconfirm>

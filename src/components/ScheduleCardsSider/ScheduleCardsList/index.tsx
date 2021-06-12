@@ -1,21 +1,21 @@
+import _ from "lodash";
 import React, { useEffect, useState } from "react";
+import { ISchedule } from "../../../types/ISchedule";
 import ScheduleCard from "./ScheduleCard";
 
-interface IProps {}
+interface IProps {
+  schedules: ISchedule[] | undefined;
+  loading?: boolean;
+}
 
-export default function ScheduleCardsList({}: IProps) {
-  const [cardsLoading, setCardsLoading] = useState(true);
+export default function ScheduleCardsList({ schedules, loading }: IProps) {
+  const getDummySkeletonLoading = () => _.times(5, () => <ScheduleCard schedule={undefined} />);
 
-  useEffect(() => {
-    setCardsLoading(false);
-  }, []);
-
-  const test = [0, 0, 0, 0, 0];
   return (
     <>
-      {test.map(i => (
-        <ScheduleCard loading={cardsLoading} />
-      ))}
+      {schedules !== undefined
+        ? schedules?.map(schedule => <ScheduleCard schedule={schedule} loading={loading} />)
+        : getDummySkeletonLoading()}
     </>
   );
 }
