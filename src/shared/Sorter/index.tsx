@@ -8,10 +8,8 @@ interface IProps {
 }
 
 export enum SortType {
-  DateDescending = 0,
-  DateAscending = 1,
-  TitleDescending = 2,
-  TitleAscending = 3,
+  TitleDescending = 0,
+  TitleAscending = 1,
 }
 
 export default function Sorter({ handleSort }: IProps) {
@@ -23,15 +21,6 @@ export default function Sorter({ handleSort }: IProps) {
 
   const menu: JSX.Element = (
     <Menu onClick={e => handleSort(parseInt(e.key))}>
-      <Menu.ItemGroup title="Date">
-        <Menu.Item key={SortType.DateAscending}>
-          <SortAscendingOutlined /> Ascending
-        </Menu.Item>
-        <Menu.Item key={SortType.DateDescending}>
-          <SortDescendingOutlined /> Descending
-        </Menu.Item>
-      </Menu.ItemGroup>
-
       <Menu.ItemGroup title="Title">
         <Menu.Item key={SortType.TitleAscending}>
           <SortAscendingOutlined /> Ascending

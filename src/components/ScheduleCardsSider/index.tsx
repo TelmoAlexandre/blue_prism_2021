@@ -5,38 +5,32 @@ import { useAppDispatcher, useAppSelector } from "../../hooks";
 import Search from "../../shared/Search";
 import { ISearch } from "../../shared/Search/types/SearchTypes";
 import { SortType } from "../../shared/Sorter";
-import { updateScheduleSearch } from "../../store/ScheduleStore/ScheduleStore";
+import { updateScheduleSearch, updateScheduleSort } from "../../store/ScheduleStore/ScheduleStore";
 import { ISchedule } from "../../types/ISchedule";
 import { useScheduleApi } from "./hooks/useScheduleApi";
 import ScheduleCardsList from "./ScheduleCardsList";
+import { filterSchedules, sortSchedules } from "./ScheduleCardsList/utils";
 import styles from "./styles.module.scss";
 
 interface IProps {}
 
 export default function ScheduleCardsSider({}: IProps) {
   const dispatch = useAppDispatcher();
-  const [filteredSchedules, setFilteredSchedules] = useState<ISchedule[] | undefined>(undefined);
+  const [processedSchedules, setProcessedSchedules] = useState<ISchedule[] | undefined>(undefined);
   const { schedules, getSchedules, loading } = useScheduleApi();
-  const { search } = useAppSelector(state => state.scheduleStore);
+  const { search, sort } = useAppSelector(state => state.scheduleStore);
 
   useEffect(() => {
     getSchedules();
   }, []);
 
   useEffect(() => {
-    let filteredSchedules = _.cloneDeep(schedules);
-    filteredSchedules = filteredSchedules?.filter(
-      s =>
-        s.title?.toLowerCase().includes(search.text?.toLowerCase() ?? "") ||
-        s.description?.toLowerCase().includes(search.text?.toLowerCase() ?? "")
-    );
-    setFilteredSchedules(filteredSchedules);
-  }, [search, schedules]);
+    let processedSchedules = filterSchedules(schedules, search);
+    processedSchedules = sortSchedules(processedSchedules, sort);
+    setProcessedSchedules(processedSchedules);
+  }, [schedules, search, sort]);
 
-  const handleSort = (type: SortType) => {
-    alert("TODO");
-  };
-
+  const handleSort = (type: SortType) => dispatch(updateScheduleSort(type));
   const onSearch = (search: ISearch) => dispatch(updateScheduleSearch(search));
 
   return (
@@ -45,7 +39,7 @@ export default function ScheduleCardsSider({}: IProps) {
       <Search onSearch={onSearch} handleSort={handleSort} />
 
       <Divider orientation="right">All</Divider>
-      <ScheduleCardsList schedules={filteredSchedules} loading={loading} />
+      <ScheduleCardsList schedules={processedSchedules} loading={loading} />
     </div>
   );
 }

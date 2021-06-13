@@ -22,7 +22,7 @@ export default function Search({ className, onSearch, handleSort }: IProps) {
     <div className={`${styles.container} ${className}`}>
       <Input
         className={styles.input}
-        placeholder="Search by Title"
+        placeholder="Search by Title or Description"
         prefix={<SearchOutlined style={{ color: "white" }} />}
         size="large"
         onChange={e => setSearch({ text: e.target.value })}

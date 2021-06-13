@@ -1,16 +1,19 @@
 import { createSlice, current, PayloadAction } from "@reduxjs/toolkit";
 import _ from "lodash";
 import { ISearch } from "../../shared/Search/types/SearchTypes";
+import { SortType } from "../../shared/Sorter";
 import { ISchedule } from "../../types/ISchedule";
 
 interface IScheduleState {
   schedules: ISchedule[] | undefined;
   search: ISearch;
+  sort: SortType;
 }
 
 const initialState: IScheduleState = {
   schedules: undefined,
   search: {},
+  sort: SortType.TitleAscending,
 };
 
 const scheduleStore = createSlice({
@@ -36,10 +39,14 @@ const scheduleStore = createSlice({
     updateScheduleSearch(state, { payload }: PayloadAction<ISearch>) {
       state.search = payload;
     },
+    updateScheduleSort(state, { payload }: PayloadAction<SortType>) {
+      state.sort = payload;
+    },
   },
 });
 
-export const { updateSchedules, updateSchedule, updateScheduleSearch } = scheduleStore.actions;
+export const { updateSchedules, updateSchedule, updateScheduleSearch, updateScheduleSort } =
+  scheduleStore.actions;
 
 export const scheduleStoreReducers = {
   scheduleStore: scheduleStore.reducer,
