@@ -1,4 +1,4 @@
-import { Divider, Skeleton } from "antd";
+import { Divider } from "antd";
 import React from "react";
 import LoadingPage from "../../../pages/LoadingPage";
 import { ILog } from "../../../types/Logs";

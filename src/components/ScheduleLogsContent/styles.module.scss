@@ -9,12 +9,18 @@
 
   .search {
     :global(.ant-input-affix-wrapper) {
-      width: 25rem;
-      min-width: 10rem;
+      width: 20rem;
+      min-width: 6rem;
     }
   }
 
   .logsList {
     padding-top: 1rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    padding: 0 0 2rem;
   }
 }

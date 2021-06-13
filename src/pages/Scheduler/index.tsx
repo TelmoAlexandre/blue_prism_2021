@@ -1,6 +1,6 @@
 import { Drawer } from "antd";
 import Layout, { Content, Header } from "antd/lib/layout/layout";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import ScheduleCardsSider from "../../components/ScheduleCardsSider";
 import ScheduleLogsContent from "../../components/ScheduleLogsContent";
 import { useAppSelector } from "../../hooks";
@@ -14,8 +14,11 @@ export default function SchedulerPage({}: IProps) {
   const { selectedScheduleId, schedules } = useAppSelector(state => state.scheduleStore);
   const [selectedSchedule, setSelectedSchedule] = useState<ISchedule | undefined>(undefined);
   const [logsDrawerVisible, setLogsDrawerVisible] = useState(false);
+  const [innerWidth, setInnerWidth] = useState<number>(window.innerWidth);
 
-  const { innerWidth } = window;
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (selectedScheduleId) {
@@ -25,9 +28,13 @@ export default function SchedulerPage({}: IProps) {
     }
   }, [selectedScheduleId]);
 
-  const openLogDrawerIfSmallScreen = () => {
-    if (innerWidth < 1000) setLogsDrawerVisible(true);
+  const handleResize = () => {
+    setInnerWidth(window.innerWidth);
   };
+
+  const openLogDrawerIfSmallScreen = useCallback(() => {
+    if (innerWidth < 1000) setLogsDrawerVisible(true);
+  }, [innerWidth]);
 
   return (
     <Layout>

@@ -1,5 +1,5 @@
 import _ from "lodash";
-import React, { useCallback } from "react";
+import React from "react";
 import { useAppSelector } from "../../../hooks";
 import { ISchedule } from "../../../types/Schedules";
 import ScheduleCard from "./ScheduleCard";
