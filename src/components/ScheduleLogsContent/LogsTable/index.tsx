@@ -1,6 +1,5 @@
 import { Table } from "antd";
 import Column from "antd/lib/table/Column";
-import ColumnGroup from "antd/lib/table/ColumnGroup";
 import React from "react";
 import { ILog } from "../../../types/Logs";
 import StatusBadge from "./StatusBadge";
@@ -24,7 +23,7 @@ export default function LogsTable({ logs }: IProps) {
           title="Duration"
           dataIndex="duration"
           key="duration"
-          render={(text, record: ILog) => {
+          render={text => {
             return text ? text : "-";
           }}
         />
@@ -34,6 +33,11 @@ export default function LogsTable({ logs }: IProps) {
           dataIndex="finished"
           key="finished"
           render={(text, record: ILog) => <StatusBadge finished={record.finished} />}
+          filters={[
+            { text: "Finished", value: true },
+            { text: "OnGoing", value: false },
+          ]}
+          onFilter={(value, record) => record.finished === value}
         />
       </Table>
     </div>
