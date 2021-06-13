@@ -28,7 +28,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"json-server --watch data/db.json\"",
+    "start": "concurrently \"react-scripts start\" \"json-server --watch --delay 2000 data/db.json\"",
     "build": "webpack --mode=production --node-env=production",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

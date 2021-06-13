@@ -7,3 +7,8 @@ export const getUrl = (params: string) => {
 
 export const showGenericErrorFeedback = () =>
   message.error("An error occurred during your request.");
+
+export const stopPropagation = (event?: React.MouseEvent<HTMLElement, MouseEvent>) => {
+  event?.preventDefault();
+  event?.stopPropagation();
+};

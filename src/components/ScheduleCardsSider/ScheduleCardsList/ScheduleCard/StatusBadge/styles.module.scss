@@ -1,0 +1,15 @@
+$active: #07c500fa;
+$retired: #7e7e7efa;
+
+.container {
+  .label {
+    padding-left: 0.5rem;
+  }
+
+  .active {
+    color: $active;
+  }
+  .retired {
+    color: $retired;
+  }
+}

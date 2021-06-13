@@ -27,6 +27,11 @@
   .footer {
     margin-top: 0.5rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+
+    .statusBadge {
+      display: flex;
+      align-items: center;
+    }
   }
 }

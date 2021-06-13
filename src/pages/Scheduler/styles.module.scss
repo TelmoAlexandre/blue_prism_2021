@@ -27,5 +27,9 @@
 @media (max-width: 850px) {
   .content {
     flex-direction: column;
+
+    .schedules {
+      height: 40vh;
+    }
   }
 }
