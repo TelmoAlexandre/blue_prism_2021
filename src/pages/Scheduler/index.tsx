@@ -26,7 +26,7 @@ export default function SchedulerPage({}: IProps) {
   }, [selectedScheduleId]);
 
   const openLogDrawerIfSmallScreen = () => {
-    if (innerWidth < 850) setLogsDrawerVisible(true);
+    if (innerWidth < 1000) setLogsDrawerVisible(true);
   };
 
   return (
@@ -43,7 +43,7 @@ export default function SchedulerPage({}: IProps) {
             <ScheduleLogsContent schedule={selectedSchedule} />
           </div>
 
-          {/* Drawer to show Logs when viewport is less than 850px */}
+          {/* Drawer to show Logs when viewport is less than 1000px */}
           <Drawer
             visible={logsDrawerVisible}
             width={"90vw"}
