@@ -2,7 +2,7 @@ import { createSlice, current, PayloadAction } from "@reduxjs/toolkit";
 import _ from "lodash";
 import { ISearch } from "../../shared/Search/types/SearchTypes";
 import { SortType } from "../../shared/Sorter";
-import { ISchedule } from "../../types/ISchedule";
+import { ISchedule } from "../../types/Schedules";
 
 interface IScheduleState {
   schedules: ISchedule[] | undefined;

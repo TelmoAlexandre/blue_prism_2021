@@ -1,7 +1,7 @@
 import _ from "lodash";
 import { ISearch } from "../../../../shared/Search/types/SearchTypes";
 import { SortType } from "../../../../shared/Sorter";
-import { ISchedule } from "../../../../types/ISchedule";
+import { ISchedule } from "../../../../types/Schedules";
 
 export const filterSchedules = (
   schedules: ISchedule[] | undefined,

@@ -6,8 +6,8 @@ import Search from "../../shared/Search";
 import { ISearch } from "../../shared/Search/types/SearchTypes";
 import { SortType } from "../../shared/Sorter";
 import { updateScheduleSearch, updateScheduleSort } from "../../store/ScheduleStore/ScheduleStore";
-import { ISchedule } from "../../types/ISchedule";
-import { useScheduleApi } from "./hooks/useScheduleApi";
+import { ISchedule } from "../../types/Schedules";
+import { useSchedulesApi } from "../../api/useSchedulesApi";
 import ScheduleCardsList from "./ScheduleCardsList";
 import { filterSchedules, sortSchedules } from "./ScheduleCardsList/utils";
 import styles from "./styles.module.scss";
@@ -17,11 +17,11 @@ interface IProps {}
 export default function ScheduleCardsSider({}: IProps) {
   const dispatch = useAppDispatcher();
   const [processedSchedules, setProcessedSchedules] = useState<ISchedule[] | undefined>(undefined);
-  const { schedules, getSchedules, loading } = useScheduleApi();
+  const { schedules, fetchSchedules, loading } = useSchedulesApi();
   const { search, sort } = useAppSelector(state => state.scheduleStore);
 
   useEffect(() => {
-    getSchedules();
+    fetchSchedules();
   }, []);
 
   useEffect(() => {

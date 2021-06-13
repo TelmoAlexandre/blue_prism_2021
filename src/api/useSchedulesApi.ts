@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { useAppDispatcher, useAppSelector } from "../../../hooks";
-import { updateSchedule, updateSchedules } from "../../../store/ScheduleStore/ScheduleStore";
-import { ISchedule } from "../../../types/ISchedule";
-import { getUrl, showGenericErrorFeedback } from "../../../utils";
+import { useAppDispatcher, useAppSelector } from "../hooks";
+import { updateSchedule, updateSchedules } from "../store/ScheduleStore/ScheduleStore";
+import { ISchedule } from "../types/Schedules";
+import { getUrl, showGenericErrorFeedback } from "../utils";
 
-interface IUseScheduleApi {
+interface IUseSchedulesApi {
   schedules: ISchedule[] | undefined;
-  getSchedules(): Promise<void>;
+  fetchSchedules(): Promise<ISchedule[] | undefined>;
   changeRetire(id: number | undefined, retire: boolean | undefined): Promise<boolean>;
   loading: boolean;
 }
 
-export const useScheduleApi = (): IUseScheduleApi => {
+export const useSchedulesApi = (): IUseSchedulesApi => {
   const dispatch = useAppDispatcher();
   const { schedules } = useAppSelector(state => state.scheduleStore);
   const [loading, setLoading] = useState(false);
@@ -19,11 +19,13 @@ export const useScheduleApi = (): IUseScheduleApi => {
   // This allows the component who uses this custom hook
   // to have absolute control of when, where and how many times
   // the API fetch occurs.
-  const getSchedules = async (): Promise<void> => {
+  const fetchSchedules = async (): Promise<ISchedule[] | undefined> => {
     setLoading(true);
-    const resp = await fetchSchedules();
+    const resp = await fetchSchedulesRequest();
     dispatch(updateSchedules(resp));
     setLoading(false);
+
+    return schedules;
   };
 
   const changeRetire = async (
@@ -39,10 +41,10 @@ export const useScheduleApi = (): IUseScheduleApi => {
     return true;
   };
 
-  return { schedules, getSchedules, loading, changeRetire };
+  return { schedules, fetchSchedules, loading, changeRetire };
 };
 
-const fetchSchedules = async (): Promise<ISchedule[] | undefined> => {
+const fetchSchedulesRequest = async (): Promise<ISchedule[] | undefined> => {
   try {
     const url = getUrl("schedules");
     const resp = await fetch(url);

@@ -1,6 +1,6 @@
 import _ from "lodash";
 import React from "react";
-import { ISchedule } from "../../../types/ISchedule";
+import { ISchedule } from "../../../types/Schedules";
 import ScheduleCard from "./ScheduleCard";
 
 interface IProps {
