@@ -9,14 +9,14 @@ interface IProps {
 }
 
 export default function ScheduleCardsList({ schedules, loading }: IProps) {
-  // 5 dummy Cards to represent Card Loading
-  const getDummySkeletonLoading = () => _.times(5, () => <ScheduleCard schedule={undefined} />);
+  // 3 dummy Cards to represent Card Loading
+  const dummySkeletonLoading = _.times(3, () => <ScheduleCard schedule={undefined} />);
 
   return (
     <>
       {schedules !== undefined
         ? schedules?.map(schedule => <ScheduleCard schedule={schedule} loading={loading} />)
-        : getDummySkeletonLoading()}
+        : dummySkeletonLoading}
     </>
   );
 }

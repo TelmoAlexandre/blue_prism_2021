@@ -25,7 +25,7 @@ export default function Search({ className, onSearch, handleSort }: IProps) {
         placeholder="Search by Title or Description"
         prefix={<SearchOutlined style={{ color: "white" }} />}
         size="large"
-        onChange={e => setSearch({ text: e.target.value })}
+        onChange={e => setSearch({ ...search, text: e.target.value })}
         bordered={false}
         allowClear
       />
