@@ -1,16 +1,20 @@
-import React from "react";
 import "antd/dist/antd.css";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
-import "./index.scss";
-import Router from "./app/router";
-import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
+import "./index.scss";
+import LoadingPage from "./pages/LoadingPage";
+import reportWebVitals from "./reportWebVitals";
 import store from "./store";
+
+const SchedulerPage = lazy(() => import("./pages/Scheduler"));
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router />
+      <Suspense fallback={<LoadingPage />}>
+        <SchedulerPage />
+      </Suspense>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
