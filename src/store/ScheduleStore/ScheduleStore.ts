@@ -1,13 +1,16 @@
 import { createSlice, current, PayloadAction } from "@reduxjs/toolkit";
 import _ from "lodash";
+import { ISearch } from "../../shared/Search/types/SearchTypes";
 import { ISchedule } from "../../types/ISchedule";
 
 interface IScheduleState {
   schedules: ISchedule[] | undefined;
+  search: ISearch;
 }
 
 const initialState: IScheduleState = {
   schedules: undefined,
+  search: {},
 };
 
 const scheduleStore = createSlice({
@@ -30,10 +33,13 @@ const scheduleStore = createSlice({
         }
       }
     },
+    updateScheduleSearch(state, { payload }: PayloadAction<ISearch>) {
+      state.search = payload;
+    },
   },
 });
 
-export const { updateSchedules, updateSchedule } = scheduleStore.actions;
+export const { updateSchedules, updateSchedule, updateScheduleSearch } = scheduleStore.actions;
 
 export const scheduleStoreReducers = {
   scheduleStore: scheduleStore.reducer,

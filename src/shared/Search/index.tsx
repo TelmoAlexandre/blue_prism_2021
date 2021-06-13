@@ -1,16 +1,23 @@
 import { SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
-import React, { ChangeEvent } from "react";
+import React, { useEffect, useState } from "react";
 import ScheduleSorter, { SortType } from "../Sorter";
 import styles from "./styles.module.scss";
+import { ISearch } from "./types/SearchTypes";
 
 interface IProps {
   className?: string;
-  onSearch(e: ChangeEvent<HTMLInputElement>): void;
+  onSearch(search: ISearch): void;
   handleSort(type: SortType): void;
 }
 
 export default function Search({ className, onSearch, handleSort }: IProps) {
+  const [search, setSearch] = useState<ISearch>({});
+
+  useEffect(() => {
+    onSearch(search);
+  }, [search]);
+
   return (
     <div className={`${styles.container} ${className}`}>
       <Input
@@ -18,7 +25,7 @@ export default function Search({ className, onSearch, handleSort }: IProps) {
         placeholder="Search by Title"
         prefix={<SearchOutlined style={{ color: "white" }} />}
         size="large"
-        onChange={onSearch}
+        onChange={e => setSearch({ text: e.target.value })}
         bordered={false}
         allowClear
       />

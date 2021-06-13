@@ -1,5 +1,5 @@
 import _ from "lodash";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { ISchedule } from "../../../types/ISchedule";
 import ScheduleCard from "./ScheduleCard";
 
@@ -9,6 +9,7 @@ interface IProps {
 }
 
 export default function ScheduleCardsList({ schedules, loading }: IProps) {
+  // 5 dummy Cards to represent Card Loading
   const getDummySkeletonLoading = () => _.times(5, () => <ScheduleCard schedule={undefined} />);
 
   return (

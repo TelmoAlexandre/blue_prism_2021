@@ -1,6 +1,7 @@
 import { Divider } from "antd";
 import React from "react";
 import Search from "../../shared/Search";
+import { ISearch } from "../../shared/Search/types/SearchTypes";
 import { SortType } from "../../shared/Sorter";
 import LogsList from "./LogsList";
 import styles from "./styles.module.scss";
@@ -12,9 +13,7 @@ export default function ScheduleLogsContent({}: IProps) {
     alert("TODO");
   };
 
-  const onSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    alert("TODO");
-  };
+  const onSearch = (search: ISearch) => {};
 
   return (
     <div className={styles.container}>
