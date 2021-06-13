@@ -32,9 +32,7 @@
     "start": "concurrently \"react-scripts start\" \"json-server --watch --delay 2000 data/db.json\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -75,7 +73,6 @@
   "devDependencies": {
     "@types/lodash": "^4.14.170",
     "concurrently": "^6.2.0",
-    "gh-pages": "^3.2.0",
     "json-server": "^0.16.3",
     "redux-devtools-extension": "^2.13.9"
   }
