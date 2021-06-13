@@ -7,7 +7,7 @@ import { ISearch } from "../../shared/Search/types/SearchTypes";
 import { SortType } from "../../shared/Sorter";
 import { updateLogsSearch, updateLogsSort } from "../../store/LogStore/LogStore";
 import { ILog } from "../../types/Logs";
-import LogsList from "./LogsList";
+import LogsTable from "./LogsTable";
 import styles from "./styles.module.scss";
 import { filterLogs, sortLogs } from "./utils";
 
@@ -48,7 +48,11 @@ export default function ScheduleLogsContent({ scheduleId }: IProps) {
       <div className={styles.topBar}>
         <Search className={styles.search} onSearch={onSearch} handleSort={handleSort} />
       </div>
-      {scheduleId && <LogsList logs={proccessedLogs} loading={loading} />}
+      {scheduleId && (
+        <div className={styles.logsList}>
+          <LogsTable logs={proccessedLogs} />
+        </div>
+      )}
     </div>
   );
 }

@@ -3,6 +3,6 @@ export interface ILog {
   title?: string;
   description?: string;
   duration?: string;
-  ongoing?: boolean;
+  finished?: boolean;
   scheduleId?: number;
 }

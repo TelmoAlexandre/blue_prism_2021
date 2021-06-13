@@ -61,7 +61,7 @@
       "title": "Ut molestie quam tellus",
       "description": "Quisque et lacus id arcu congue lacinia in vel enim. Sed eget velit ac est feugiat vulputate quis id orci.",
       "duration": "2h",
-      "ongoing": true,
+      "finished": true,
       "scheduleId": 1
     },
     {
@@ -69,23 +69,23 @@
       "title": "Pellentesque nec nulla sed",
       "description": "Morbi porttitor, nunc quis dapibus auctor, purus lorem dignissim lectus, non volutpat mauris justo nec erat.",
       "duration": "20m",
-      "ongoing": true,
+      "finished": true,
       "scheduleId": 1
     },
     {
       "id": 3,
       "title": "Donec eget felis sit",
       "description": "Nam vel lectus vitae orci viverra sagittis. Pellentesque in dui ut est finibus venenatis. Vestibulum dapibus tortor eu ipsum dapibus porttitor.",
-      "duration": "4h",
-      "ongoing": true,
+      "duration": null,
+      "finished": false,
       "scheduleId": 1
     },
     {
       "id": 4,
       "title": "In quis massa dignissim",
       "description": "",
-      "duration": "8h",
-      "ongoing": true,
+      "duration": null,
+      "finished": false,
       "scheduleId": 2
     },
     {
@@ -93,15 +93,15 @@
       "title": "Nulla eu faucibus lectus",
       "description": "Mauris auctor consequat cursus.",
       "duration": "1h",
-      "ongoing": true,
+      "finished": true,
       "scheduleId": 2
     },
     {
       "id": 7,
       "title": "Proin porttitor pretium",
       "description": "Etiam sagittis semper.",
-      "duration": "30m",
-      "ongoing": true,
+      "duration": null,
+      "finished": false,
       "scheduleId": 3
     },
     {
@@ -109,23 +109,23 @@
       "title": "Quisque eleifend",
       "description": "Maecenas facilisis massa turpis, vel hendrerit nulla volutpat vitae.",
       "duration": "15m",
-      "ongoing": true,
+      "finished": true,
       "scheduleId": 4
     },
     {
       "id": 9,
       "title": "Suspendisse feugiat dolor",
       "description": "Mauris eget orci et tortor placerat rhoncus nec non magna. ",
-      "duration": "40m",
-      "ongoing": true,
+      "duration": null,
+      "finished": false,
       "scheduleId": 4
     },
     {
       "id": 10,
       "title": "Phasellus accumsan ullamcorper",
       "description": "Cras iaculis faucibus enim",
-      "duration": "1h",
-      "ongoing": true,
+      "duration": null,
+      "finished": false,
       "scheduleId": 5
     },
     {
@@ -133,15 +133,15 @@
       "title": "Sed sollicitudin",
       "description": "Curabitur eu odio in augue aliquet posuere id sit amet massa.",
       "duration": "3h",
-      "ongoing": true,
+      "finished": true,
       "scheduleId": 5
     },
     {
       "id": 12,
       "title": "Pellentesque nec nulla sed",
       "description": "Morbi porttitor, nunc quis dapibus auctor, purus lorem dignissim lectus, non volutpat mauris justo nec erat.",
-      "duration": "20m",
-      "ongoing": true,
+      "duration": null,
+      "finished": false,
       "scheduleId": 6
     },
     {
@@ -149,7 +149,7 @@
       "title": "Suspendisse feugiat dolor",
       "description": "Mauris eget orci et tortor placerat rhoncus nec non magna. ",
       "duration": "40m",
-      "ongoing": true,
+      "finished": true,
       "scheduleId": 6
     },
     {
@@ -157,15 +157,15 @@
       "title": "Proin porttitor pretium",
       "description": "Etiam sagittis semper.",
       "duration": "30m",
-      "ongoing": true,
+      "finished": true,
       "scheduleId": 7
     },
     {
       "id": 15,
       "title": "Nulla eu faucibus lectus",
       "description": "Mauris auctor consequat cursus.",
-      "duration": "1h",
-      "ongoing": true,
+      "duration": null,
+      "finished": false,
       "scheduleId": 7
     },
     {
@@ -173,7 +173,7 @@
       "title": "Proin porttitor pretium",
       "description": "Etiam sagittis semper.",
       "duration": "30m",
-      "ongoing": true,
+      "finished": true,
       "scheduleId": 7
     },
     {
@@ -181,7 +181,7 @@
       "title": "Ut viverra",
       "description": "Mauris consequat tristique augue ac rutrum. Curabitur mollis sapien eu metus congue.",
       "duration": "30m",
-      "ongoing": true,
+      "finished": true,
       "scheduleId": 8
     },
     {
@@ -189,15 +189,15 @@
       "title": "Pellentesque nec nulla sed",
       "description": "Morbi porttitor, nunc quis dapibus auctor, purus lorem dignissim lectus, non volutpat mauris justo nec erat.",
       "duration": "20m",
-      "ongoing": true,
+      "finished": true,
       "scheduleId": 9
     },
     {
       "id": 19,
       "title": "Donec eget felis sit",
       "description": "Nam vel lectus vitae orci viverra sagittis. Pellentesque in dui ut est finibus venenatis. Vestibulum dapibus tortor eu ipsum dapibus porttitor.",
-      "duration": "4h",
-      "ongoing": true,
+      "duration": null,
+      "finished": false,
       "scheduleId": 9
     }
   ]
