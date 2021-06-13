@@ -1,14 +1,16 @@
 import Layout, { Content, Header } from "antd/lib/layout/layout";
-import Sider from "antd/lib/layout/Sider";
 import React from "react";
 import ScheduleCardsSider from "../../components/ScheduleCardsSider";
 import ScheduleLogsContent from "../../components/ScheduleLogsContent";
+import { useAppSelector } from "../../hooks";
 import CustomHeader from "../../shared/CustomHeader";
 import styles from "./styles.module.scss";
 
 interface IProps {}
 
 export default function SchedulerPage({}: IProps) {
+  const { selectedScheduleId } = useAppSelector(state => state.scheduleStore);
+
   return (
     <Layout>
       <Header className={styles.header}>
@@ -20,7 +22,7 @@ export default function SchedulerPage({}: IProps) {
             <ScheduleCardsSider />
           </div>
           <div className={styles.logs}>
-            <ScheduleLogsContent />
+            <ScheduleLogsContent scheduleId={selectedScheduleId} />
           </div>
         </div>
       </Content>

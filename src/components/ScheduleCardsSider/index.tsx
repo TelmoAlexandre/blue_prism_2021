@@ -1,16 +1,15 @@
 import { Divider } from "antd";
-import _ from "lodash";
 import React, { useEffect, useState } from "react";
+import { useSchedulesApi } from "../../api/useSchedulesApi";
 import { useAppDispatcher, useAppSelector } from "../../hooks";
 import Search from "../../shared/Search";
 import { ISearch } from "../../shared/Search/types/SearchTypes";
 import { SortType } from "../../shared/Sorter";
 import { updateScheduleSearch, updateScheduleSort } from "../../store/ScheduleStore/ScheduleStore";
 import { ISchedule } from "../../types/Schedules";
-import { useSchedulesApi } from "../../api/useSchedulesApi";
 import ScheduleCardsList from "./ScheduleCardsList";
-import { filterSchedules, sortSchedules } from "./ScheduleCardsList/utils";
 import styles from "./styles.module.scss";
+import { filterSchedules, sortSchedules } from "./utils";
 
 interface IProps {}
 
@@ -25,9 +24,11 @@ export default function ScheduleCardsSider({}: IProps) {
   }, []);
 
   useEffect(() => {
-    let processedSchedules = filterSchedules(schedules, search);
-    processedSchedules = sortSchedules(processedSchedules, sort);
-    setProcessedSchedules(processedSchedules);
+    if (schedules) {
+      let processedSchedules = filterSchedules(schedules, search);
+      processedSchedules = sortSchedules(processedSchedules, sort);
+      setProcessedSchedules(processedSchedules);
+    }
   }, [schedules, search, sort]);
 
   const handleSort = (type: SortType) => dispatch(updateScheduleSort(type));

@@ -6,12 +6,14 @@ import { ISchedule } from "../../types/Schedules";
 
 interface IScheduleState {
   schedules: ISchedule[] | undefined;
+  selectedScheduleId: number | undefined;
   search: ISearch;
   sort: SortType;
 }
 
 const initialState: IScheduleState = {
   schedules: undefined,
+  selectedScheduleId: undefined,
   search: {},
   sort: SortType.TitleAscending,
 };
@@ -36,6 +38,9 @@ const scheduleStore = createSlice({
         }
       }
     },
+    updateSelectedScheduleId(state, { payload }: PayloadAction<number | undefined>) {
+      state.selectedScheduleId = payload;
+    },
     updateScheduleSearch(state, { payload }: PayloadAction<ISearch>) {
       state.search = payload;
     },
@@ -45,8 +50,13 @@ const scheduleStore = createSlice({
   },
 });
 
-export const { updateSchedules, updateSchedule, updateScheduleSearch, updateScheduleSort } =
-  scheduleStore.actions;
+export const {
+  updateSchedules,
+  updateSchedule,
+  updateSelectedScheduleId,
+  updateScheduleSearch,
+  updateScheduleSort,
+} = scheduleStore.actions;
 
 export const scheduleStoreReducers = {
   scheduleStore: scheduleStore.reducer,

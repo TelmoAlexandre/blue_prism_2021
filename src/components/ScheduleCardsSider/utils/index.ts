@@ -1,7 +1,8 @@
 import _ from "lodash";
-import { ISearch } from "../../../../shared/Search/types/SearchTypes";
-import { SortType } from "../../../../shared/Sorter";
-import { ISchedule } from "../../../../types/Schedules";
+import { ISearch } from "../../../shared/Search/types/SearchTypes";
+import { SortType } from "../../../shared/Sorter";
+import { ISchedule } from "../../../types/Schedules";
+import { sortByString } from "../../../utils";
 
 export const filterSchedules = (
   schedules: ISchedule[] | undefined,
@@ -32,7 +33,7 @@ export const sortSchedules = (
     let sortedSchedules = _.cloneDeep(schedules);
     sortedSchedules = sortedSchedules?.sort((a, b) => {
       if ([SortType.TitleAscending, SortType.TitleDescending].includes(sort))
-        return sortByTitle(a, b, sort);
+        return sortByString(a.title, b.title, sort === SortType.TitleAscending);
 
       return 0;
     });
@@ -42,15 +43,4 @@ export const sortSchedules = (
     console.error(error);
     return schedules;
   }
-};
-
-const sortByTitle = (a: ISchedule, b: ISchedule, sort: SortType) => {
-  const asc = sort === SortType.TitleAscending;
-
-  var titleA = a.title?.toLowerCase() ?? "";
-  var titleB = b.title?.toLowerCase() ?? "";
-  if (titleA < titleB) return asc ? -1 : 1;
-  if (titleA > titleB) return asc ? 1 : -1;
-
-  return 0;
 };

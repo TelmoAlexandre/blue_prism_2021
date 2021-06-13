@@ -10,6 +10,7 @@
 
   .schedules {
     min-width: 25rem;
+    max-width: 25rem;
     height: 90vh;
     overflow-y: auto;
     overflow-x: hidden;
@@ -30,6 +31,7 @@
 
     .schedules {
       height: 40vh;
+      max-width: none;
     }
   }
 }
