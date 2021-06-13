@@ -1,5 +1,13 @@
 .container {
   height: 100%;
+  width: 100%;
+
+  .scheduleInfo {
+    h1 {
+      color: white;
+      font-size: 1.7rem;
+    }
+  }
 
   .centered {
     text-align: center;

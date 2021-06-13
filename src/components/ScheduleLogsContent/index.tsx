@@ -1,4 +1,4 @@
-import { Divider, message } from "antd";
+import { Divider } from "antd";
 import React, { useEffect, useState } from "react";
 import { useLogsApi } from "../../api/useLogsApi";
 import { useAppDispatcher, useAppSelector } from "../../hooks";
@@ -7,29 +7,24 @@ import { ISearch } from "../../shared/Search/types/SearchTypes";
 import { SortType } from "../../shared/Sorter";
 import { updateLogsSearch, updateLogsSort } from "../../store/LogStore/LogStore";
 import { ILog } from "../../types/Logs";
-import LogsTable from "./LogsTable";
+import { ISchedule } from "../../types/Schedules";
+import LogsList from "./LogsList";
 import styles from "./styles.module.scss";
 import { filterLogs, sortLogs } from "./utils";
 
 interface IProps {
-  scheduleId: number | undefined;
+  schedule: ISchedule | undefined;
 }
 
-export default function ScheduleLogsContent({ scheduleId }: IProps) {
+export default function ScheduleLogsContent({ schedule }: IProps) {
   const dispatch = useAppDispatcher();
   const [proccessedLogs, setProccessedLogs] = useState<ILog[] | undefined>(undefined);
   const { logs, fetchLogs, loading } = useLogsApi();
   const { search, sort } = useAppSelector(state => state.logStore);
 
   useEffect(() => {
-    const handleLogFetch = async () => {
-      const hide = message.loading("Loading..", 0);
-      await fetchLogs(scheduleId);
-      hide();
-    };
-
-    if (scheduleId) handleLogFetch();
-  }, [scheduleId]);
+    if (schedule) fetchLogs(schedule?.id);
+  }, [schedule]);
 
   useEffect(() => {
     if (logs) {
@@ -48,11 +43,9 @@ export default function ScheduleLogsContent({ scheduleId }: IProps) {
       <div className={styles.topBar}>
         <Search className={styles.search} onSearch={onSearch} handleSort={handleSort} />
       </div>
-      {scheduleId && (
-        <div className={styles.logsList}>
-          <LogsTable logs={proccessedLogs} />
-        </div>
-      )}
+      <div className={styles.logsList}>
+        <LogsList logs={proccessedLogs} schedule={schedule} loading={loading} />
+      </div>
     </div>
   );
 }

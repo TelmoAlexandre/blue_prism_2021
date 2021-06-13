@@ -1,4 +1,7 @@
 .card {
+  cursor: pointer;
+  padding-left: 4px;
+  transition: 0.2s;
   :global(.ant-card-body) {
     padding: 1.2rem !important;
   }
@@ -34,4 +37,9 @@
       align-items: center;
     }
   }
+}
+
+.selected {
+  border-left: 5px solid #0099ff;
+  padding-left: 0;
 }

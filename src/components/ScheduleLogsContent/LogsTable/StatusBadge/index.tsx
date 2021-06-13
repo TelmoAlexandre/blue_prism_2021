@@ -7,7 +7,7 @@ interface IProps {
 }
 
 export default function StatusBadge({ finished }: IProps) {
-  if (finished === undefined) return null;
+  if (finished === undefined) return <>-</>;
 
   return (
     <div className={styles.container}>
