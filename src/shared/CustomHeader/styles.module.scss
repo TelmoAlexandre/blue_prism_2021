@@ -13,9 +13,7 @@
   }
 
   .right {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    display: none;
 
     .barsIcon {
       font-size: 2.5rem;
@@ -24,6 +22,16 @@
       path {
         color: white;
       }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .container {
+    .right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
     }
   }
 }

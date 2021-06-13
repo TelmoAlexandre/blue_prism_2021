@@ -13,16 +13,20 @@ interface IProps {
   schedule?: ISchedule | undefined;
   loading?: boolean;
   selected?: boolean;
+  onCardClickCallback?(): void;
 }
 
 const { Meta } = Card;
 
-export default function ScheduleCard({ schedule, loading, selected }: IProps) {
+export default function ScheduleCard({ schedule, loading, selected, onCardClickCallback }: IProps) {
   const dispatch = useAppDispatcher();
   const [cardClassName, setCardClassName] = useState<string>(styles.card);
   const { changeRetire } = useSchedulesApi();
 
-  const onClickCard = () => dispatch(updateSelectedScheduleId(schedule?.id));
+  const onClickCard = () => {
+    dispatch(updateSelectedScheduleId(schedule?.id));
+    if (onCardClickCallback) onCardClickCallback();
+  };
 
   const handleRetire = async (): Promise<void> => {
     const resp = await changeRetire(schedule?.id, !!!schedule?.retired);

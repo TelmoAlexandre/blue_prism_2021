@@ -7,9 +7,10 @@ import ScheduleCard from "./ScheduleCard";
 interface IProps {
   schedules: ISchedule[] | undefined;
   loading?: boolean;
+  onCardClickCallback?(): void;
 }
 
-export default function ScheduleCardsList({ schedules, loading }: IProps) {
+export default function ScheduleCardsList({ schedules, loading, onCardClickCallback }: IProps) {
   const { selectedScheduleId } = useAppSelector(state => state.scheduleStore);
 
   // 3 dummy Cards to represent Card Loading
@@ -26,6 +27,7 @@ export default function ScheduleCardsList({ schedules, loading }: IProps) {
               schedule={schedule}
               loading={loading}
               selected={schedule.id === selectedScheduleId}
+              onCardClickCallback={onCardClickCallback}
             />
           ))
         : dummySkeletonLoading}

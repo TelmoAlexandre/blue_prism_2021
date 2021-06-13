@@ -1,7 +1,6 @@
 $transitionLength: 0.5s;
 
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -41,4 +40,14 @@ body {
 .ant-input,
 .ant-input-suffix path {
   color: white;
+}
+
+.ant-drawer-content {
+  background: linear-gradient(to bottom right, #002f4b, #d3705d);
+  animation: gradient 30s ease infinite;
+}
+
+.anticon-close {
+  color: white;
+  font-size: 1.5rem;
 }

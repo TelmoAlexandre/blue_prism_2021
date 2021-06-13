@@ -25,13 +25,19 @@
   }
 }
 
+.drawer {
+  padding-top: 2rem;
+}
+
 @media (max-width: 850px) {
   .content {
     flex-direction: column;
 
     .schedules {
-      height: 40vh;
       max-width: none;
+    }
+    .logs {
+      display: none;
     }
   }
 }

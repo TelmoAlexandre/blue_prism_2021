@@ -11,9 +11,11 @@ import ScheduleCardsList from "./ScheduleCardsList";
 import styles from "./styles.module.scss";
 import { filterSchedules, sortSchedules } from "./utils";
 
-interface IProps {}
+interface IProps {
+  onCardClickCallback?(): void;
+}
 
-export default function ScheduleCardsSider({}: IProps) {
+export default function ScheduleCardsSider({ onCardClickCallback }: IProps) {
   const dispatch = useAppDispatcher();
   const [processedSchedules, setProcessedSchedules] = useState<ISchedule[] | undefined>(undefined);
   const { schedules, fetchSchedules, loading } = useSchedulesApi();
@@ -40,7 +42,11 @@ export default function ScheduleCardsSider({}: IProps) {
       <Search onSearch={onSearch} handleSort={handleSort} />
 
       <Divider orientation="right">All</Divider>
-      <ScheduleCardsList schedules={processedSchedules} loading={loading} />
+      <ScheduleCardsList
+        schedules={processedSchedules}
+        loading={loading}
+        onCardClickCallback={onCardClickCallback}
+      />
     </div>
   );
 }
