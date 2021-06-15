@@ -21,7 +21,7 @@ I used several other packages like:
 - redux-devtools-extension - To use the useful chrome extension - React DevTools.
 
 The app is responsive to mobile. I chose to open the logs sections in a drawer when the browser window is small.
-The general font color, opacity and background where all created by myself.
+The general font color, opacity and background were all created by myself.
 
 In terms of the more technical side of the app, I kept all components smaller than 100 lines of code.
 The API requests are implemented in their own custom hooks.
