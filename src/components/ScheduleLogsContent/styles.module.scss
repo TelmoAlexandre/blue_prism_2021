@@ -1,6 +1,5 @@
 .container {
   padding: 0 2rem 2rem;
-  height: 80%;
 
   .topBar {
     display: flex;
@@ -16,6 +15,7 @@
 
   .logsList {
     padding-top: 1rem;
+    margin-bottom: 3rem;
   }
 }
 
